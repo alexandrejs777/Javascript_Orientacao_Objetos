@@ -9,12 +9,16 @@ const cliente2 = new Cliente();
 cliente2.nome = "Bruna";
 cliente2.cpf = 88822233301;
 
-const contaCorrenteAlexandre = new ContaCorrente();
-contaCorrenteAlexandre._saldo = 5000;
-contaCorrenteAlexandre.agencia = 1001;
+const conta1 = new ContaCorrente();
+conta1.agencia = 1001;
+conta1.cliente = cliente1;
+conta1.depositar(500);
 
-contaCorrenteAlexandre.depositar(100);
-const valorSacado = contaCorrenteAlexandre.sacar(50);
-console.log(valorSacado);
+const conta2 = new ContaCorrente();
+conta2.agencia = 120;
+conta2.cliente = cliente2;
 
-console.log(contaCorrenteAlexandre);
+conta1.transferir(200, conta2);
+
+console.log(conta2);
+console.log(conta1);
