@@ -5,11 +5,19 @@ class Cliente {
 
 class ContaCorrente {
   agencia;
-  saldo;
+  /* #saldo = 0; Atributo privado aguardando a aceitação da convenção. https://github.com/tc39/proposal-class-fields#private-fields */
+  _saldo = 0; /* Essa é a convenção atual, mas o atributo não é privado na prática. 
+  O underline antes do atributo só indica que se trata de uma variável privada. */
+
+  depositar(valor) {
+    if (valor > 0) {
+      this.#saldo += valor;
+    }
+  }
 
   sacar(valor) {
-    if (this.saldo >= valor) {
-      this.saldo -= valor;
+    if (this._saldo >= valor) {
+      this._saldo -= valor;
     }
   }
 }
@@ -23,17 +31,10 @@ cliente2.nome = "Bruna";
 cliente2.cpf = 88822233301;
 
 const contaCorrenteAlexandre = new ContaCorrente();
-console.log("Valor do saldo inicial:");
-contaCorrenteAlexandre.saldo = 0;
+contaCorrenteAlexandre._saldo = 5000;
 contaCorrenteAlexandre.agencia = 1001;
 
-console.log(contaCorrenteAlexandre.saldo);
-console.log("Valor do saque:");
-contaCorrenteAlexandre.saldo = 100;
-console.log(contaCorrenteAlexandre.saldo);
-contaCorrenteAlexandre.sacar(250);
+contaCorrenteAlexandre.depositar(100);
+contaCorrenteAlexandre.sacar(50);
 
-console.log("Saldo atualizado:");
-console.log(contaCorrenteAlexandre.saldo);
-console.log(cliente1);
-console.log(cliente2);
+console.log(contaCorrenteAlexandre);
