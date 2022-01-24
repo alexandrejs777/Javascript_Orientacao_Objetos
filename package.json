@@ -1,0 +1,20 @@
+{
+  "name": "bytebank",
+  "version": "1.0.0",
+  "description": "Projeto do bytebank para os seus clientes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexandrejs777/Javascript_Orientacao_Objetos.git"
+  },
+  "author": "alexandre",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/alexandrejs777/Javascript_Orientacao_Objetos/issues"
+  },
+  "homepage": "https://github.com/alexandrejs777/Javascript_Orientacao_Objetos#readme"
+}
