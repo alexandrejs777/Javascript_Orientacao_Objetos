@@ -10,14 +10,14 @@ class ContaCorrente {
   O underline antes do atributo só indica que se trata de uma variável privada. */
 
   depositar(valor) {
-    if (valor > 0) {
-      this.#saldo += valor;
-    }
+    if (valor > 0) return;
+    this._saldo += valor;
   }
 
   sacar(valor) {
     if (this._saldo >= valor) {
       this._saldo -= valor;
+      return valor;
     }
   }
 }
@@ -35,6 +35,7 @@ contaCorrenteAlexandre._saldo = 5000;
 contaCorrenteAlexandre.agencia = 1001;
 
 contaCorrenteAlexandre.depositar(100);
-contaCorrenteAlexandre.sacar(50);
+const valorSacado = contaCorrenteAlexandre.sacar(50);
+console.log(valorSacado);
 
 console.log(contaCorrenteAlexandre);
