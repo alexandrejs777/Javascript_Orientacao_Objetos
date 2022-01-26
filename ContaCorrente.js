@@ -1,11 +1,27 @@
+import { Cliente } from "./Cliente.js";
+
 export class ContaCorrente {
     agencia;
-    cliente;
+    _cliente;
+
+    set cliente(novoValor){
+      if (novoValor instanceof Cliente){
+        this._cliente = novoValor;
+      }
+    }
+
+    get cliente(){
+      return this._cliente;
+    }
 
     /* #saldo = 0; Atributo privado aguardando a aceitação da convenção. https://github.com/tc39/proposal-class-fields#private-fields */
     _saldo = 0; /* Essa é a convenção atual, mas o atributo não é privado na prática. 
     O underline antes do atributo só indica que se trata de uma variável privada. */
   
+    get saldo(){
+      return this._saldo;
+    }
+
     depositar(valor) {
       if (valor <= 0) return;
       this._saldo += valor;
