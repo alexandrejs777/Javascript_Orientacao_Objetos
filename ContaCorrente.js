@@ -1,6 +1,7 @@
 import { Cliente } from "./Cliente.js";
 
 export class ContaCorrente {
+  static numeroDeContas = 0;
   agencia;
   _cliente;
   /* #saldo = 0; Atributo privado aguardando a aceitação da convenção. https://github.com/tc39/proposal-class-fields#private-fields */
@@ -26,6 +27,7 @@ export class ContaCorrente {
   constructor(cliente, agencia) {
     this.cliente = cliente;
     this.agencia = agencia;
+    ContaCorrente.numeroDeContas += 1;
   }
 
   depositar(valor) {

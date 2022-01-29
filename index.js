@@ -13,4 +13,4 @@ const conta2 = new ContaCorrente(cliente2, 120);
 conta1.transferir(200, conta2);
 
 // console.log(conta2.saldo);
-console.log(cliente1.cpf);
+console.log(ContaCorrente.numeroDeContas);
